@@ -1,0 +1,854 @@
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EN3Q2RT9RM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-EN3Q2RT9RM');
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png?v=2">
+    <link rel="shortcut icon" href="/assets/images/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Product | Haute Fighting Gears</title>
+    <meta name="description" id="page-desc"
+        content="Custom fight gear manufacturer — boxing gloves, MMA gear, and more." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" id="page-canonical" href="https://www.hautefightinggears.com/product/" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph — values updated dynamically by products-engine -->
+    <meta property="og:type" content="product" />
+    <meta property="og:url" id="og-url" content="https://www.hautefightinggears.com/product/" />
+    <meta property="og:title" id="og-title" content="Custom Fight Gear | Haute Fighting Gears" />
+    <meta property="og:description" id="og-desc" content="Premium OEM fight gear manufactured in Sialkot, Pakistan." />
+    <meta property="og:image" id="og-image"
+        content="https://www.hautefightinggears.com/assets/images/home-thumb.webp" />
+    <meta property="og:site_name" content="Haute Fighting Gears" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" id="tw-title" content="Custom Fight Gear | Haute Fighting Gears" />
+    <meta name="twitter:description" id="tw-desc"
+        content="OEM boxing gloves and MMA gear manufacturer in Sialkot, Pakistan." />
+    <meta name="twitter:image" id="tw-image"
+        content="https://www.hautefightinggears.com/assets/images/home-thumb.webp" />
+
+    <!-- JSON-LD Product schema — populated dynamically by JS -->
+    <script type="application/ld+json" id="product-schema">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "brand": {
+        "@type": "Brand",
+        "name": "Haute Fighting Gears"
+      }
+    }
+    </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+
+        /* ── Main image fade ── */
+        #main-image {
+            transition: opacity 0.22s ease;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* ── Thumbnail strip ── */
+        .thumb-btn {
+            cursor: pointer;
+            border: 2px solid transparent;
+            background: #fff;
+            padding: 3px;
+            transition: border-color .2s, box-shadow .2s;
+            flex-shrink: 0;
+        }
+
+        .thumb-btn:hover {
+            border-color: #707070;
+        }
+
+        .thumb-btn.active {
+            border-color: #E10600;
+            box-shadow: 0 0 0 1px #E10600;
+        }
+
+        .thumb-btn img {
+            display: block;
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+        }
+
+        /* ── Option chip ── */
+        .opt-chip {
+            display: inline-block;
+            padding: 9px 16px;
+            border: 1.5px solid #1b1b1b;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            cursor: pointer;
+            background: #fff;
+            color: #1b1b1b;
+            transition: border-color .18s, background .18s, color .18s;
+            user-select: none;
+        }
+
+        .opt-chip:hover {
+            border-color: #1b1b1b;
+            background: #f5f5f5;
+        }
+
+        .opt-chip.selected {
+            background: #1b1b1b;
+            color: #fff;
+            border-color: #1b1b1b;
+        }
+
+        /* ── Spec row ── */
+        .spec-row {
+            display: flex;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            width: 38%;
+            flex-shrink: 0;
+            padding: 10px 12px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #707070;
+            background: #f3f3f3;
+        }
+
+        .spec-values {
+            padding: 10px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .spec-val {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            color: #1b1b1b;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 2px 9px;
+        }
+
+        /* ── Custom notes ── */
+        #custom-notes {
+            width: 100%;
+            border: 2px solid #1b1b1b;
+            padding: 14px 16px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 14px;
+            color: #1b1b1b;
+            background: #FBF9F9;
+            resize: vertical;
+            min-height: 100px;
+            box-sizing: border-box;
+        }
+
+        #custom-notes:focus {
+            outline: none;
+            border-color: #E10600;
+        }
+
+        /* ── Send Inquiry CTA ── */
+        #btn-send-inquiry {
+            width: 100%;
+            background: #E10600;
+            color: #fff;
+            border: none;
+            padding: 20px 24px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background .2s;
+        }
+
+        #btn-send-inquiry:hover {
+            background: #1b1b1b;
+        }
+
+        /* ── Trust badges ── */
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .trust-badge:last-child {
+            border-bottom: none;
+        }
+
+        .trust-badge .material-symbols-outlined {
+            color: #E10600;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .trust-badge-text {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1b1b1b;
+        }
+
+        .trust-badge-sub {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 12px;
+            color: #707070;
+            margin-top: 1px;
+        }
+
+        /* ── Lightbox ── */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #lightbox.open {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            color: #fff;
+            font-size: 36px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+            opacity: 0.7;
+            transition: opacity .2s;
+        }
+
+        #lightbox-close:hover {
+            opacity: 1;
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 767px) {
+            .thumb-btn img {
+                width: 58px;
+                height: 58px;
+            }
+
+            .spec-label {
+                width: 44%;
+                font-size: 10px;
+            }
+
+            #btn-send-inquiry {
+                font-size: 13px;
+                padding: 17px 20px;
+            }
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #E10600 !important;
+            border-width: 2px;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', theme: {
+                extend: {
+                    colors: { 'primary': '#000000', 'on-primary': '#ffffff', 'accent-red': '#E10600', 'surface': '#FBF9F9', 'on-surface': '#1b1b1b', 'surface-container': '#eeeeee', 'surface-container-lowest': '#ffffff', 'surface-container-low': '#f3f3f3', 'outline-variant': '#cfc4c5', 'outline': '#747878', 'neutral-gray': '#707070', 'primary-fixed-dim': '#c6c6c6', 'on-surface-variant': '#444748', 'background': '#f9f9f9' },
+                    borderRadius: { DEFAULT: '0px', lg: '0px', xl: '0px', full: '9999px' },
+                    fontFamily: { 'headline-lg': ['Anton'], 'display-md': ['Anton'], 'headline-md': ['Anton'], 'body-md': ['Hanken Grotesk'], 'body-lg': ['Hanken Grotesk'], 'label-bold': ['Hanken Grotesk'], 'label-sm': ['Hanken Grotesk'] },
+                    fontSize: { 'display-md': ['64px', { lineHeight: '60px', letterSpacing: '0.02em' }], 'headline-lg': ['48px', { lineHeight: '44px', letterSpacing: '0.03em' }], 'headline-md': ['32px', { lineHeight: '32px', letterSpacing: '0.03em' }], 'body-lg': ['18px', { lineHeight: '28px', fontWeight: '500' }], 'body-md': ['16px', { lineHeight: '24px' }], 'label-bold': ['14px', { lineHeight: '20px', letterSpacing: '0.1em', fontWeight: '700' }], 'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.05em', fontWeight: '600' }] }
+                }
+            }
+        }
+    </script>
+    <script src="/assets/js/mobile-fixes.js"></script>
+
+    <!-- Microsoft Clarity — replace REPLACE_WITH_CLARITY_ID with your project ID -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "REPLACE_WITH_CLARITY_ID");
+    </script>
+    <!-- Google Search Console verification — replace content value with your token -->
+    <!-- <meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN" /> -->
+    <!-- Bing Webmaster verification — replace content value with your token -->
+    <!-- <meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN" /> -->
+</head>
+
+<body class="bg-background text-on-surface font-body-md">
+    <div id="navbar-placeholder"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image zoom">
+        <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+        <img id="lightbox-img" src="" alt="" />
+    </div>
+
+    <main class="pt-[72px]">
+        <!-- Loading state -->
+        <div id="product-loading" class="px-5 md:px-[64px] py-[80px] max-w-[1440px] mx-auto text-center">
+            <svg class="mx-auto mb-4 opacity-30" width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="#707070" stroke-width="2" stroke-linecap="round"/></svg>
+            <p class="font-label-bold uppercase opacity-30">Loading product...</p>
+        </div>
+
+        <!-- Error state -->
+        <div id="product-error" class="hidden px-5 md:px-[64px] py-[80px] max-w-[1440px] mx-auto text-center">
+            <svg class="mx-auto mb-4 opacity-20" width="64" height="64" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" stroke="#1b1b1b" stroke-width="1.5"/><path d="M16 3H8L6 7h12l-2-4z" stroke="#1b1b1b" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <h2 class="font-headline-md text-headline-md uppercase mb-4">Product Not Found</h2>
+            <p class="font-body-md text-neutral-gray mb-8">This product doesn't exist or may have been removed.</p>
+            <a href="/products/"
+                class="inline-flex items-center gap-2 bg-accent-red text-on-primary px-8 py-4 font-label-bold uppercase hover:bg-primary transition-colors">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></svg> View All Products
+            </a>
+        </div>
+
+        <!-- Product content -->
+        <div id="product-content" class="hidden">
+
+            <!-- Breadcrumb -->
+            <div style="border-bottom:1px solid #e5e5e5;background:#fff">
+                <div class="px-5 md:px-[64px] py-3 max-w-[1440px] mx-auto">
+                    <nav class="flex items-center gap-2"
+                        style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;color:#707070;letter-spacing:0.04em">
+                        <a href="/" style="color:#707070;text-decoration:none" onmouseover="this.style.color='#E10600'"
+                            onmouseout="this.style.color='#707070'">Home</a>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+                        <a href="/products/" style="color:#707070;text-decoration:none"
+                            onmouseover="this.style.color='#E10600'"
+                            onmouseout="this.style.color='#707070'">Products</a>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+                        <span id="breadcrumb-category" style="cursor:pointer;color:#707070"
+                            onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#707070'"></span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+                        <span id="breadcrumb-name" style="color:#1b1b1b;font-weight:600"></span>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Main product layout -->
+            <section class="px-5 md:px-[64px] py-10 md:py-16 max-w-[1440px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+
+                    <!-- ── LEFT: Gallery ── -->
+                    <div>
+                        <!-- Main image -->
+                        <div id="main-image-wrap"
+                            style="background:#fff;border:1px solid #e5e5e5;overflow:hidden;aspect-ratio:1/1;cursor:zoom-in;position:relative"
+                            onclick="openLightbox(document.getElementById('main-image').src)">
+                            <img id="main-image" src="" alt=""
+                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22400%22 height%3D%22400%22%3E%3Crect width%3D%22400%22 height%3D%22400%22 fill%3D%22%23eeeeee%22%2F%3E%3C%2Fsvg%3E';this.style.cursor='default'" />
+                            <span style="position:absolute;bottom:12px;right:12px;opacity:0.6;pointer-events:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#707070" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></span>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div id="thumbnails" class="flex gap-2 mt-3 flex-wrap"></div>
+                    </div>
+
+                    <!-- ── RIGHT: Product Info ── -->
+                    <div class="flex flex-col gap-0">
+
+                        <!-- Category label -->
+                        <p id="product-category"
+                            style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#E10600;margin-bottom:10px">
+                        </p>
+
+                        <!-- Product name -->
+                        <h1 id="product-name" class="font-headline-lg text-headline-lg uppercase"
+                            style="line-height:1;margin-bottom:20px"></h1>
+
+                        <!-- Divider -->
+                        <div style="height:2px;background:#1b1b1b;width:48px;margin-bottom:20px"></div>
+
+                        <!-- Description -->
+                        <p id="product-description"
+                            style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;line-height:1.75;color:#444748;margin-bottom:28px">
+                        </p>
+
+                        <!-- ── Material / Style variants (chips) ── -->
+                        <div id="variants-wrap" class="hidden" style="margin-bottom:24px">
+                            <p
+                                style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#1b1b1b;margin-bottom:10px">
+                                Material / Style</p>
+                            <div id="variants-list" class="flex flex-wrap gap-2"></div>
+                        </div>
+
+                        <!-- ── Spec option chips (Size, Weight, Color, Closure…) ── -->
+                        <div id="specs-chips-wrap" style="margin-bottom:24px"></div>
+
+                        <!-- ── Custom Notes ── -->
+                        <div style="margin-bottom:24px">
+                            <p
+                                style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#707070;margin-bottom:10px">
+                                Custom Notes
+                                <span
+                                    style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px;color:#aaa;margin-left:6px">(optional)</span>
+                            </p>
+                            <textarea id="custom-notes-input" rows="3"
+                                placeholder="e.g. Logo on palm, specific packaging, delivery notes..."
+                                style="width:100%;border:1.5px solid #1b1b1b;padding:10px 12px;font-size:13px;font-family:inherit;background:#FBF9F9;resize:none;box-sizing:border-box"></textarea>
+                        </div>
+
+                        <!-- ── SEND INQUIRY (primary CTA) ── -->
+                        <button id="btn-send-inquiry" onclick="openInquiry()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+                            SEND INQUIRY
+                        </button>
+
+                        <!-- ── Trust badges ── -->
+                        <div style="margin-top:28px;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5">
+                            <div class="trust-badge">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                                <div>
+                                    <div class="trust-badge-text">Worldwide Shipping</div>
+                                    <div class="trust-badge-sub">Air &amp; sea freight to any country</div>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                <div>
+                                    <div class="trust-badge-text">1–2 Week Lead Time</div>
+                                    <div class="trust-badge-sub">Fast turnaround for standard orders</div>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 3H8L6 7h12l-2-4z"/></svg>
+                                <div>
+                                    <div class="trust-badge-text">Low MOQ — From 1 Unit</div>
+                                    <div class="trust-badge-sub">Best pricing at 20+ units</div>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                <div>
+                                    <div class="trust-badge-text">Full Custom Branding</div>
+                                    <div class="trust-badge-sub">Logo, colors, packaging — all included</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- end right col -->
+                </div>
+            </section>
+
+            <!-- Related Products -->
+            <section id="related-section" class="px-5 md:px-[64px] py-[60px]"
+                style="background:#f3f3f3;border-top:1px solid #e5e5e5">
+                <div class="max-w-[1440px] mx-auto">
+                    <p class="font-label-bold uppercase mb-2"
+                        style="font-size:11px;letter-spacing:0.18em;color:#E10600">More Products</p>
+                    <h2 class="font-headline-md text-headline-md uppercase mb-8" style="font-size:26px">YOU MAY ALSO
+                        LIKE</h2>
+                    <div id="related-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5"></div>
+                </div>
+            </section>
+
+            <!-- Bottom CTA -->
+            <section class="bg-primary border-t-4 border-accent-red px-5 md:px-[64px] py-[60px]">
+                <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div>
+                        <h2 class="font-headline-lg text-headline-lg text-on-primary uppercase mb-2">READY TO ORDER?
+                        </h2>
+                        <p class="font-body-md text-on-primary opacity-60">Send us your requirements and we'll respond
+                            within 24 hours.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+                        <button onclick="openInquiry()"
+                            class="inline-flex items-center justify-center gap-2 bg-accent-red text-on-primary px-10 py-5 font-label-bold uppercase hover:bg-on-primary hover:text-primary transition-colors">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg> Send Inquiry
+                        </button>
+                        <a href="/products/"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-on-primary text-on-primary px-8 py-4 font-label-bold uppercase hover:bg-on-primary hover:text-primary transition-colors">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></svg> All Products
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- end product-content -->
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <noscript>
+        <style>
+            body::before {
+                content: "This site requires JavaScript.";
+                display: block;
+                text-align: center;
+                padding: 40px;
+                font-family: sans-serif;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/main.js?v=3"></script>
+    <script src="/assets/js/products-engine.js"></script>
+    <script>
+        injectNavbar('');
+        injectFooter();
+
+        // ── State ─────────────────────────────────────────────────
+        var _currentProduct = null;
+        var _selectedVariant = '';
+        var _selectedSpecs = {};
+        var WHATSAPP_NUM = '923148968805';
+
+        // ── Lightbox ──────────────────────────────────────────────
+        function openLightbox(src) {
+            var lb = document.getElementById('lightbox');
+            var img = document.getElementById('lightbox-img');
+            if (!src || src.startsWith('data:')) return;
+            img.src = src;
+            lb.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+
+        // ── Image switch ──────────────────────────────────────────
+        function switchImage(src, btn) {
+            var img = document.getElementById('main-image');
+            img.style.opacity = '0';
+            setTimeout(function () {
+                img.src = src;
+                img.style.opacity = '1';
+            }, 150);
+            document.querySelectorAll('.thumb-btn').forEach(function (b) { b.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+        }
+
+        // ── Build inquiry context string from selections ──────────
+        function _buildSelectionNote() {
+            var parts = [];
+            if (_selectedVariant) parts.push('Material/Style: ' + _selectedVariant);
+            Object.entries(_selectedSpecs).forEach(function (e) {
+                if (e[1]) parts.push(e[0] + ': ' + e[1]);
+            });
+            var notes = (document.getElementById('custom-notes-input') || {}).value || '';
+            if (notes.trim()) parts.push('Notes: ' + notes.trim());
+            return parts.join(' | ');
+        }
+
+        // ── Open inquiry — redirect to inquiry page with product name ────
+        function openInquiry() {
+            var name = _currentProduct ? _currentProduct.name : '';
+            var extra = _buildSelectionNote();
+            var url = '/inquiry/?product=' + encodeURIComponent(name);
+            if (extra) url += '&description=' + encodeURIComponent(extra);
+            window.location.href = url;
+        }
+
+        // ── Main loader ───────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', async function () {
+            var params = new URLSearchParams(window.location.search);
+            var productId = params.get('id');
+
+            if (!productId) {
+                document.getElementById('product-loading').classList.add('hidden');
+                document.getElementById('product-error').classList.remove('hidden');
+                return;
+            }
+
+            try {
+                var product = await getProductById(productId);
+                if (!product) throw new Error('not found');
+                _currentProduct = product;
+
+                // ── Page meta ──────────────────────────────────────
+                document.getElementById('page-title').textContent = product.name + ' | Haute Fighting Gears';
+                if (product.seo && product.seo.description) {
+                    document.getElementById('page-desc').setAttribute('content', product.seo.description);
+                }
+
+                // ── Dynamic OG / Twitter / Canonical meta ──────────
+                var productUrl = 'https://www.hautefightinggears.com/product/?id=' + encodeURIComponent(product.id);
+                var productImg = product.images && product.images.length ? 'https://www.hautefightinggears.com' + product.images[0] : 'https://www.hautefightinggears.com/assets/images/home-thumb.webp';
+                var seoTitle = (product.seo && product.seo.title) ? product.seo.title : (product.name + ' | Haute Fighting Gears');
+                var seoDesc = (product.seo && product.seo.description) ? product.seo.description : (product.description || '');
+
+                var canonEl = document.getElementById('page-canonical');
+                if (canonEl) canonEl.setAttribute('href', productUrl);
+
+                var ogUrlEl = document.getElementById('og-url');
+                if (ogUrlEl) ogUrlEl.setAttribute('content', productUrl);
+                var ogTitleEl = document.getElementById('og-title');
+                if (ogTitleEl) ogTitleEl.setAttribute('content', seoTitle);
+                var ogDescEl = document.getElementById('og-desc');
+                if (ogDescEl) ogDescEl.setAttribute('content', seoDesc);
+                var ogImgEl = document.getElementById('og-image');
+                if (ogImgEl) ogImgEl.setAttribute('content', productImg);
+
+                var twTitleEl = document.getElementById('tw-title');
+                if (twTitleEl) twTitleEl.setAttribute('content', seoTitle);
+                var twDescEl = document.getElementById('tw-desc');
+                if (twDescEl) twDescEl.setAttribute('content', seoDesc);
+                var twImgEl = document.getElementById('tw-image');
+                if (twImgEl) twImgEl.setAttribute('content', productImg);
+
+                // ── JSON-LD Product Schema ──────────────────────────
+                var schemaEl = document.getElementById('product-schema');
+                if (schemaEl) {
+                    var schemaData = {
+                        '@context': 'https://schema.org',
+                        '@type': 'Product',
+                        'name': product.name,
+                        'description': product.description || '',
+                        'url': productUrl,
+                        'image': product.images && product.images.length ? product.images.map(function (img) { return 'https://www.hautefightinggears.com' + img; }) : [productImg],
+                        'brand': { '@type': 'Brand', 'name': 'Haute Fighting Gears' },
+                        'manufacturer': {
+                            '@type': 'Organization',
+                            'name': 'Haute Fighting Gears',
+                            'url': 'https://www.hautefightinggears.com/'
+                        },
+                        'offers': {
+                            '@type': 'Offer',
+                            'url': productUrl,
+                            'availability': 'https://schema.org/InStock',
+                            'priceSpecification': {
+                                '@type': 'PriceSpecification',
+                                'description': 'Contact for wholesale pricing'
+                            },
+                            'seller': { '@type': 'Organization', 'name': 'Haute Fighting Gears' }
+                        }
+                    };
+                    schemaEl.textContent = JSON.stringify(schemaData, null, 2);
+                }
+
+                // ── BreadcrumbList Schema ───────────────────────────
+                var bcScript = document.createElement('script');
+                bcScript.type = 'application/ld+json';
+                bcScript.textContent = JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'BreadcrumbList',
+                    'itemListElement': [
+                        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.hautefightinggears.com/' },
+                        { '@type': 'ListItem', 'position': 2, 'name': 'Products', 'item': 'https://www.hautefightinggears.com/products/' },
+                        { '@type': 'ListItem', 'position': 3, 'name': product.categoryName || product.category, 'item': 'https://www.hautefightinggears.com/products/?cat=' + encodeURIComponent(product.categoryId || '') },
+                        { '@type': 'ListItem', 'position': 4, 'name': product.name, 'item': productUrl }
+                    ]
+                });
+                document.head.appendChild(bcScript);
+
+                // ── Breadcrumb ─────────────────────────────────────
+                var breadCat = document.getElementById('breadcrumb-category');
+                breadCat.textContent = product.categoryName || product.category || '';
+                breadCat.onclick = function () {
+                    window.location.href = '/products/?cat=' + encodeURIComponent(product.categoryId || '');
+                };
+                document.getElementById('breadcrumb-name').textContent = product.name;
+
+                // ── Product info ───────────────────────────────────
+                document.getElementById('product-category').textContent = product.categoryName || product.category || '';
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-description').textContent = product.description || '';
+
+                // ── Gallery ────────────────────────────────────────
+                var images = (product.images && product.images.length) ? product.images
+                    : (product.image ? [product.image] : []);
+                var thumbsEl = document.getElementById('thumbnails');
+
+                if (images.length > 0) {
+                    var mainImg = document.getElementById('main-image');
+                    mainImg.src = _resolveImage(product, 0);
+                    mainImg.alt = product.name;
+
+                    if (images.length > 1) {
+                        thumbsEl.innerHTML = images.map(function (imgSrc, i) {
+                            var resolved = _toAbsoluteProductPath ? _toAbsoluteProductPath(imgSrc) : imgSrc;
+                            var safeQuot = resolved.replace(/'/g, "\\'");
+                            var activeClass = i === 0 ? ' active' : '';
+                            return '<button class="thumb-btn' + activeClass + '" onclick="switchImage(\'' + safeQuot + '\',this)" aria-label="View image ' + (i + 1) + '">'
+                                + '<img src="' + resolved + '" alt="' + product.name + ' view ' + (i + 1) + '" loading="lazy"'
+                                + ' onerror="this.parentElement.style.display=\'none\'">'
+                                + '</button>';
+                        }).join('');
+                    }
+                }
+
+                // ── Material / Style variant chips ─────────────────
+                if (product.variants && product.variants.length > 0) {
+                    var varWrap = document.getElementById('variants-wrap');
+                    var varList = document.getElementById('variants-list');
+                    varWrap.classList.remove('hidden');
+                    _selectedVariant = product.variants[0].label;
+                    varList.innerHTML = product.variants.map(function (v, i) {
+                        return '<button type="button" class="opt-chip' + (i === 0 ? ' selected' : '') + '"'
+                            + ' onclick="selectVariant(this, \'' + v.label.replace(/'/g, "&#39;") + '\')">'
+                            + v.label + '</button>';
+                    }).join('');
+                }
+
+                // ── Spec option chip rows ──────────────────────────
+                var chipsWrap = document.getElementById('specs-chips-wrap');
+                if (product.specs && Object.keys(product.specs).length > 0) {
+                    chipsWrap.innerHTML = Object.entries(product.specs).map(function (entry) {
+                        var specKey = entry[0];
+                        var specVals = Array.isArray(entry[1]) ? entry[1] : [entry[1]];
+                        _selectedSpecs[specKey] = specVals[0];
+                        return '<div style="margin-bottom:20px">'
+                            + '<p style="font-family:\'Hanken Grotesk\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#1b1b1b;margin-bottom:10px">' + specKey + '</p>'
+                            + '<div style="display:flex;flex-wrap:wrap;gap:8px">'
+                            + specVals.map(function (val, vi) {
+                                var safeKey = specKey.replace(/'/g, "&#39;");
+                                var safeVal = val.replace(/'/g, "&#39;");
+                                return '<button type="button" class="opt-chip' + (vi === 0 ? ' selected' : '') + '"'
+                                    + ' onclick="selectSpec(this,\'' + safeKey + '\',\'' + safeVal + '\')">'
+                                    + val + '</button>';
+                            }).join('')
+                            + '</div></div>';
+                    }).join('');
+                }
+
+                // ── Show page ──────────────────────────────────────
+                document.getElementById('product-loading').classList.add('hidden');
+                document.getElementById('product-content').classList.remove('hidden');
+
+                // ── Related products ───────────────────────────────
+                var allProducts = await loadSampleProducts();
+                var related = allProducts.filter(function (p) {
+                    return p.categoryId === product.categoryId && p.id !== product.id;
+                }).slice(0, 4);
+                if (related.length === 0) {
+                    related = allProducts.filter(function (p) { return p.id !== product.id; }).slice(0, 4);
+                }
+
+                var relGrid = document.getElementById('related-grid');
+                if (related.length > 0) {
+                    relGrid.innerHTML = related.map(function (p) {
+                        var img = _resolveImage(p, 0);
+                        return '<a href="/product/?id=' + encodeURIComponent(p.id) + '"'
+                            + ' class="group border border-outline-variant bg-surface-container-lowest overflow-hidden flex flex-col"'
+                            + ' style="text-decoration:none;color:inherit">'
+                            + '<div style="background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;aspect-ratio:1/1;border-bottom:1px solid #eee">'
+                            + '<img src="' + img + '" alt="' + p.name + '" loading="lazy"'
+                            + ' class="transition-transform duration-500 group-hover:scale-105"'
+                            + ' style="width:100%;height:auto;object-fit:contain;padding:8px"'
+                            + ' onerror="this.onerror=null;this.src=\'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22400%22 height%3D%22400%22%3E%3Crect width%3D%22400%22 height%3D%22400%22 fill%3D%22%23eeeeee%22%2F%3E%3C%2Fsvg%3E\'">'
+                            + '</div>'
+                            + '<div class="p-4 flex flex-col flex-grow">'
+                            + '<h3 class="font-headline-md text-headline-md uppercase mb-1" style="font-size:15px">' + p.name + '</h3>'
+                            + '<p class="font-body-md text-neutral-gray mb-3" style="font-size:11px">' + (p.categoryName || '') + '</p>'
+                            + '<div class="mt-auto"><span class="w-full bg-accent-red text-on-primary py-2 font-label-bold uppercase flex items-center justify-center gap-1 text-center" style="font-size:11px;pointer-events:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg> Inquiry</span></div>'
+                            + '</div></a>';
+                    }).join('');
+                } else {
+                    var rs = document.getElementById('related-section');
+                    if (rs) rs.style.display = 'none';
+                }
+
+                if (typeof initScrollReveal === 'function') initScrollReveal();
+
+            } catch (err) {
+                console.error('[product page]', err);
+                document.getElementById('product-loading').classList.add('hidden');
+                document.getElementById('product-error').classList.remove('hidden');
+            }
+        });
+
+        // ── Chip selection helpers ────────────────────────────────
+        function selectVariant(el, label) {
+            el.closest('#variants-list').querySelectorAll('.opt-chip').forEach(function (c) { c.classList.remove('selected'); });
+            el.classList.add('selected');
+            _selectedVariant = label;
+        }
+        function selectSpec(el, key, val) {
+            var row = el.parentElement;
+            row.querySelectorAll('.opt-chip').forEach(function (c) { c.classList.remove('selected'); });
+            el.classList.add('selected');
+            _selectedSpecs[key] = val;
+        }
+    </script>
+    <script src="/assets/js/animations.js"></script>
+
+    <!-- COOKIE POPUP -->
+    <section id="hfg-cookie-popup"
+        style="position:fixed;bottom:20px;right:20px;z-index:2147483647;width:480px;max-width:calc(100vw - 40px);background:#fbf9f9;border-top:3px solid #bb0400;box-shadow:0 10px 40px rgba(0,0,0,0.18);padding:28px;font-family:'Hanken Grotesk',sans-serif;">
+        <h2
+            style="font-family:Anton,sans-serif;font-size:24px;text-transform:uppercase;color:#000000;line-height:1;margin:0 0 8px;letter-spacing:0.02em">
+            Cookies &amp; Privacy</h2>
+        <p style="font-size:14px;color:#1b1b1b;margin:0 0 20px;line-height:1.6;opacity:0.85">We use cookies to improve
+            your experience, save your cart, and show relevant products.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+            <button id="hfg-accept" type="button"
+                style="font-family:Anton,sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;background:#ffffff;color:#000000;border:2px solid #000000;padding:11px 28px;flex:1;min-width:130px;transition:background .2s,color .2s"
+                onmouseover="this.style.background='#000000';this.style.color='#ffffff'"
+                onmouseout="this.style.background='#ffffff';this.style.color='#000000'">Accept All</button>
+            <button id="hfg-reject" type="button"
+                style="font-family:Anton,sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;background:#bb0400;color:#ffffff;border:none;padding:11px 28px;flex:1;min-width:130px;transition:background .2s"
+                onmouseover="this.style.background='#8a0300'"
+                onmouseout="this.style.background='#bb0400'">Reject</button>
+        </div>
+    </section>
+    <script>
+        (function () {
+            var p = document.getElementById('hfg-cookie-popup');
+            if (!p) return;
+            localStorage.removeItem('hfg_cookie_consent');
+            if (localStorage.getItem('cookieConsent') === 'accepted' || localStorage.getItem('cookieConsent') === 'rejected') { p.style.display = 'none'; return; }
+            p.style.display = ''; p.style.opacity = '1'; p.style.transform = 'none';
+            function dismiss(v) { localStorage.setItem('cookieConsent', v); p.style.transition = 'opacity .25s,transform .25s'; p.style.opacity = '0'; p.style.transform = 'translateY(10px)'; setTimeout(function () { p.style.display = 'none'; }, 260); }
+            document.getElementById('hfg-accept').onclick = function () { dismiss('accepted'); };
+            document.getElementById('hfg-reject').onclick = function () { dismiss('rejected'); };
+        })();
+    </script>
+</body>
+
+</html>

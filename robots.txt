@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block non-content paths
+Disallow: /assets/js/
+Disallow: /data/
+
+# Sitemap
+Sitemap: https://www.hautefightinggears.com/sitemap.xml
